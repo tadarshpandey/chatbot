@@ -16,7 +16,7 @@ load_dotenv()
 
 # Set your API key (choose one method)
 """api_key = os.getenv("GROQ_API_KEY")  # Recommended
-# api_key = st.secrets["GROQ_API_KEY"]  # For Streamlit Cloud"""
+api_key = st.secrets["GROQ_API_KEY"]  # For Streamlit Cloud"""
 api_key = (
     os.getenv("GROQ_API_KEY")          # 1. Environment variable
     or st.secrets.get("GROQ_API_KEY")  # 2. Streamlit secrets
