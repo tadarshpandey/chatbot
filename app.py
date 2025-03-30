@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit as st
 try:
     from langchain.chains import ConversationChain
     from langchain.memory import ConversationBufferMemory
@@ -16,8 +15,18 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Set your API key (choose one method)
-api_key = os.getenv("GROQ_API_KEY")  # Recommended
-# api_key = st.secrets["GROQ_API_KEY"]  # For Streamlit Cloud
+"""api_key = os.getenv("GROQ_API_KEY")  # Recommended
+# api_key = st.secrets["GROQ_API_KEY"]  # For Streamlit Cloud"""
+
+try:
+    api_key = st.secrets["GROQ_API_KEY"]
+except (KeyError, AttributeError) as e:
+    st.error("""
+    🔑 API key not configured properly. 
+    Please contact the app owner with this message:
+    """)
+    st.code(str(e))
+    st.stop()
 
 # Personalize the app
 st.title("Adarsh's AI Chatbot")  # 👈 Change to your name
