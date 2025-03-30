@@ -1,7 +1,14 @@
 import streamlit as st
-from langchain.chains import ConversationChain
-from langchain.memory import ConversationBufferMemory
-from langchain_groq import ChatGroq
+import streamlit as st
+try:
+    from langchain.chains import ConversationChain
+    from langchain.memory import ConversationBufferMemory
+    from langchain_groq import ChatGroq
+except ImportError as e:
+    st.error(f"Missing dependencies: {str(e)}")
+    st.stop()
+
+# Rest of your existing code...
 import os
 from dotenv import load_dotenv
 
