@@ -1,3 +1,4 @@
-.env 
+
 ".streamlit/secrets.toml" 
 ".env" 
+GROQ_API_KEY = "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" 
