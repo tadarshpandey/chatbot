@@ -37,7 +37,7 @@ for message in st.session_state.messages:
 # Chat logic
 if api_key:
     model = ChatGroq(
-        model_name="llama-3.1-70b-versatile",
+        model_name="llama-3.1-8b-instant",  # Example model, change as needed
         groq_api_key=api_key,
         temperature=0.7,
     )
