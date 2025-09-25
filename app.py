@@ -16,8 +16,8 @@ load_dotenv()
 
 # Set your API key (choose one method)
 api_key = (
-    os.getenv("GROQ_API_KEY")          # 1. Environment variable
-    or st.secrets.get("GROQ_API_KEY")  # 2. Streamlit secrets
+    os.getenv("GROQ_API_KEY")            # 1. Environment variable
+    or st.secrets.get("GROQ_API_KEY")    # 2. Streamlit secrets
     # or "your-key-here"                 # 3. Hardcoded fallback (remove in production)
 )
 
@@ -37,7 +37,7 @@ for message in st.session_state.messages:
 # Chat logic
 if api_key:
     model = ChatGroq(
-        model_name="llama3-70b-8192",
+        model_name="llama-3.1-70b-versatile",
         groq_api_key=api_key,
         temperature=0.7,
     )
