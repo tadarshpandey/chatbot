@@ -21,6 +21,7 @@ except ImportError as e:
 # ------------------------------
 load_dotenv()
 api_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
+print(os.getenv("GROQ_API_KEY"))
 if not api_key:
     st.error("API key not configured. Get a new Groq API key and set it in .env or Streamlit secrets")
     st.stop()
